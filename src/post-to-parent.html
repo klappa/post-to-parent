@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta name="googlebot" content="noindex" />
+    <title>Post To Parent</title>
+  </head>
+  <body>
+    <script>
+      var message = location.search
+        .slice(1)
+        .split('&')
+        .reduce((acc, s) => {
+          var result = s.split('=');
+          return Object.assign(acc, { [result[0]]: result[1] });
+        }, {});
+
+      var targetOrigin = message['target-origin'] || '*';
+
+      window.parent.postMessage(message, targetOrigin);
+    </script>
+  </body>
+</html>

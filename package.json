@@ -1,0 +1,13 @@
+{
+  "name": "post-to-parent",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {},
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true
+  }
+}
